@@ -1,25 +1,17 @@
 const path=require('path');
 const merge=require('webpack-merge');
 const baseConfig=require('./webpack.base.js');
-const webpackNodeExternals=require('webpack-node-externals');
-
-
-
-const config = {
-
-	//Bundle for Node not browser
-	target:'node',
-
+config = {
 	//entry of application
-	entry:'./src/index.js',
+	entry:'./src/client/client.js',
 
 	//tell webpack where to put output file
 	output:{
 		filename:'bundle.js',
-		path: path.resolve(__dirname, 'build')
-	},
+		path: path.resolve(__dirname, 'public')
+	}
 
-	externals:[webpackNodeExternals()]
+	
 
 };
 
